@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UtilidadController {
 	@RequestMapping("/comollegar")
 	public String index(){
+		//operación a ser realizada 
+		System.out.println("Cargando la página"); 
 		return "comollegar";
 	}
 }
+
+

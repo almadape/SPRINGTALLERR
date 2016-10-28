@@ -4,20 +4,20 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-//Significa que creara una tala Cliente
+import javax.persistence.Table;
+//Significa que se creara una tabla Cliente
 @Entity
+//@Table(name"")
 public class Cliente {
-	//Indicacion de clave primaria
+	//Identificacion de clave primaria
 	@Id
 	//Generacion automatica de valor
 	@GeneratedValue
 	private Integer id;
 	
 	private String nombre;
-	
 	private String correo;
 	
 	@OneToMany(mappedBy="cliente")
@@ -57,8 +57,8 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", nombre=" + nombre + ", correo=" + correo + ", pedidos=" + pedidos + "]";
+		return "Cliente [id=" + id + ", nombre=" + nombre + ", correo=" + correo + ", pedidos=" + pedidos
+				+ ", toString()=" + super.toString() + "]";
 	}
-	
 	
 }

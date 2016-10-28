@@ -8,20 +8,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 @Entity
 public class Pedido {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
-	
+	private Integer id;
 	private Date fechaToma;
-	
 	private Date fechaEntrega;
-	
 	private double total;
-	//Indicamos que se trata de una relacion de muchos para uno
-	//posibilita la creacion de la clave foranea
+	
+	
+	//Indicamos que se trata de una 
+	//relacion de mucho para uno
+	//posibilita la creacion de la clave
+	//foranea
 	@ManyToOne
 	private Cliente cliente;
 	
@@ -31,11 +33,11 @@ public class Pedido {
 	@OneToMany(mappedBy="pedido")
 	private List<ItemPedido> itemPedidos;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -90,8 +92,12 @@ public class Pedido {
 	@Override
 	public String toString() {
 		return "Pedido [id=" + id + ", fechaToma=" + fechaToma + ", fechaEntrega=" + fechaEntrega + ", total=" + total
-				+ ", cliente=" + cliente + ", usuario=" + usuario + ", itemPedidos=" + itemPedidos + "]";
+				+ ", cliente=" + cliente + ", usuario=" + usuario + ", itemPedidos=" + itemPedidos + ", toString()="
+				+ super.toString() + "]";
 	}
+
+	
+	
 	
 	
 	

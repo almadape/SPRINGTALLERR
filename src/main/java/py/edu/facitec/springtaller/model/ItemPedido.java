@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
 @Entity
 public class ItemPedido {
 	@Id
@@ -11,12 +12,13 @@ public class ItemPedido {
 	private Integer id;
 	
 	private int cantidadProducto;
-	
 	private double subTotal;
+	
+	
 	
 	@ManyToOne
 	private Pedido pedido;
-	
+
 	@ManyToOne
 	private Producto producto;
 
@@ -63,8 +65,10 @@ public class ItemPedido {
 	@Override
 	public String toString() {
 		return "ItemPedido [id=" + id + ", cantidadProducto=" + cantidadProducto + ", subTotal=" + subTotal
-				+ ", pedido=" + pedido + ", producto=" + producto + "]";
+				+ ", pedido=" + pedido + ", producto=" + producto + ", toString()=" + super.toString() + "]";
 	}
+
+
 	
 	
 }

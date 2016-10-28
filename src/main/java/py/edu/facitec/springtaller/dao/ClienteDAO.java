@@ -6,24 +6,29 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import py.edu.facitec.springtaller.model.Cliente;
-import py.edu.facitec.springtaller.model.Usuario;
 
 @Repository
-//Clase encargada de la manipulacion de datos, posibilita posteriormente utilizar la anotacion Awwired
+//Clase encargada de la manipulacion de datos, posibilita posteriormente utilizar la anotacion
+//Autowired
 public class ClienteDAO extends DAOGenerico<Cliente> {
-	
-	//Gestionar el entity manager
+
 	@PersistenceContext
-	private EntityManager em;
+	private EntityManager manager;
 	
 	public ClienteDAO(){
-		// paso de la clase usuario al dao generico
-		super (Cliente.class);
+		super(Cliente.class);
+	}
+
+	public void save(Cliente cliente){
+
+				//metodo para insertar los datos
+		manager.persist(cliente);
 	}
 
 	@Override
 	protected EntityManager getEntityManager() {
 		// TODO Auto-generated method stub
-		return em;
+		return manager;
 	}
+
 }

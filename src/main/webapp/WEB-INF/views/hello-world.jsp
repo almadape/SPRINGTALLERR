@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-HOLA MUNDO SPRING MVC
+	Hola Mundo
 </body>
 </html>

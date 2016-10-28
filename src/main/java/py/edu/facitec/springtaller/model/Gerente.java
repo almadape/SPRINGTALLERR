@@ -4,14 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
 @Entity
 public class Gerente {
+	
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
 	private String ci;
-	
 	private String nombre;
 	
 	@OneToOne(mappedBy="gerente")
@@ -51,8 +51,10 @@ public class Gerente {
 
 	@Override
 	public String toString() {
-		return "Gerente [id=" + id + ", ci=" + ci + ", nombre=" + nombre + ", departamento=" + departamento + "]";
+		return "Gerente [id=" + id + ", ci=" + ci + ", nombre=" + nombre + ", departamento=" + departamento
+				+ ", toString()=" + super.toString() + "]";
 	}
+	
 	
 	
 }
